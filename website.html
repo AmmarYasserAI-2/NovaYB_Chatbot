@@ -129,9 +129,17 @@
 
         function checkForCreatorQuestion(input) {
             const creatorQuestions = [
-                'who made you', 'who created you', 'who built you', 
-                'who is your creator', 'who is your developer', 'who coded you'
-            ];
+            'who made you', 'who created you', 'who built you', 'who is your creator', 'who is your developer', 'who coded you',
+            'who is behind you', 'who designed you', 'who programmed you', 'who is your maker', 'who invented you',
+            'who brought you to life', 'who made this bot', 'who built this chatbot', 'who made this AI', 'who created this AI',
+            'who owns you', 'who is responsible for you', 'who set you up', 'who is the mind behind you', 'who is your founder',
+            'who is your father', 'who is your mother', 'who put you together', 'who assembled you', 'who developed you',
+            'who is the developer of this bot', 'who created this chatbot', 'who programmed this bot', 'who made this assistant',
+            'who is behind this AI', 'who created this virtual assistant', 'who runs you', 'who controls you', 'who operates you',
+            'who is the genius behind you', 'who is the mastermind behind you', 'who is the architect of you', 'who is the brain behind you',
+            'who is the brainchild of you', 'who is the brainwave behind you', 'who is the brainbox behind you', 'who is the brainiac behind you',
+            'who is the brainpower behind you', 'who is the braintrust behind you', 'who is the brainwork behind you', 'who is the brainwave behind you',
+            'who is the brainchild behind you', 'who is the brainbox behind you', 'who is the brainiac behind you', 'who is the brainpower behind you',];
             const normalizedInput = input.toLowerCase();
             return creatorQuestions.some(question => normalizedInput.includes(question));
         }
