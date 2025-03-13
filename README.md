@@ -1,4 +1,4 @@
-# ⚡ NovaYB Chatbot
+# ⚡ NovaYB 
 
 🔥 **NovaYB** is a fully responsive, modern, AI-like chatbot interface made for developers who want an aesthetic and functional chatbot front-end!  
 Supports **Markdown**, **Copyable Code Blocks**, and **Dark Mode** out of the box! 🚀
