@@ -19,7 +19,7 @@
         #title { font-size: 1.7rem; font-weight: 600; letter-spacing: 2px; }
         .theme-switcher { font-size: 1.5rem; cursor: pointer; transition: transform 0.3s ease; }
         .theme-switcher:hover { transform: scale(1.2) rotate(360deg); }
-        .chat-container { max-width: 960px; margin: 50px auto; padding: 30px; background: rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(20px); }
+        .chat-container { max-width: 960px; margin: 50px auto; padding: 30px; background: rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); backdrop-filter: blur(20px); flex: 1; }
 
         /* 📝 Input & Buttons */
         .input-group input { background: rgba(255, 255, 255, 0.15); color: white; padding: 18px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; border: none; }
@@ -85,7 +85,7 @@
             padding: 20px;
             background: linear-gradient(135deg, #1a1a1a, #000);
             color: white;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             width: 100%;
         }
