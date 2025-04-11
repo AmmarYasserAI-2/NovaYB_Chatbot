@@ -143,31 +143,40 @@
 
         function checkForCreatorQuestion(input) {
             const creatorQuestions = [
-            'who made you', 'who created you', 'who built you', 'who is your creator', 'who is your developer', 'who coded you',
-            'who is behind you', 'who designed you', 'who programmed you', 'who is your maker', 'who invented you',
-            'who brought you to life', 'who made this bot', 'who built this chatbot', 'who made this AI', 'who created this AI',
-            'who owns you', 'who is responsible for you', 'who set you up', 'who is the mind behind you', 'who is your founder',
-            'who is your father', 'who is your mother', 'who put you together', 'who assembled you', 'who developed you',
-            'who is the developer of this bot', 'who created this chatbot', 'who programmed this bot', 'who made this assistant',
-            'who is behind this AI', 'who created this virtual assistant', 'who runs you', 'who controls you', 'who operates you',
-            'who is the genius behind you', 'who is the mastermind behind you', 'who is the architect of you', 'who is the brain behind you',
-            'who is the brainchild of you', 'who is the brainwave behind you', 'who is the brainbox behind you', 'who is the brainiac behind you',
-            'who is the brainpower behind you', 'who is the braintrust behind you', 'who is the brainwork behind you', 'who is the brainwave behind you',
-            'who is the brainchild behind you', 'who is the brainbox behind you', 'who is the brainiac behind you', 'who is the brainpower behind you',
-            'who runs NovaYB', 'who manages NovaYB', 'who is the creator of NovaYB', 'who is the developer of NovaYB', 'who built NovaYB',
-            'who designed NovaYB', 'who programmed NovaYB', 'who is behind NovaYB', 'who is responsible for NovaYB', 'who set up NovaYB',
-            'who is the mind behind NovaYB', 'who is the founder of NovaYB', 'who is the architect of NovaYB', 'who is the brain behind NovaYB',
-            'who is the genius behind NovaYB', 'who is the mastermind behind NovaYB', 'who is the brainchild of NovaYB', 'who is the brainwave behind NovaYB',
-            'who is the brainbox behind NovaYB', 'who is the brainiac behind NovaYB', 'who is the brainpower behind NovaYB', 'who is the braintrust behind NovaYB',
-            'who developed NovaYB', 'who is the person behind NovaYB', 'who is the mind behind this bot', 'who is the developer of this AI',
-            'who is the creator of this assistant', 'who is the genius behind this chatbot', 'who is the mastermind behind this AI',
-            'who is the architect of this virtual assistant', 'who is the brain behind this bot', 'who is the founder of this AI',
-            'who is the developer of this virtual assistant', 'who is the creator of this chatbot', 'who is the person behind this AI',
-            'who is the mind behind this assistant', 'who is the genius behind this bot', 'who is the mastermind behind this assistant',
-            'who is the architect of this AI', 'who is the brain behind this assistant', 'who is the founder of this bot'
+                'who made you', 'who created you', 'who built you', 'who is your creator', 'who is your developer', 'who coded you',
+                'who is behind you', 'who designed you', 'who programmed you', 'who is your maker', 'who invented you',
+                'who brought you to life', 'who made this bot', 'who built this chatbot', 'who made this AI', 'who created this AI',
+                'who owns you', 'who is responsible for you', 'who set you up', 'who is the mind behind you', 'who is your founder',
+                'who is your father', 'who is your mother', 'who put you together', 'who assembled you', 'who developed you',
+                'who is the developer of this bot', 'who created this chatbot', 'who programmed this bot', 'who made this assistant',
+                'who is behind this AI', 'who created this virtual assistant', 'who runs you', 'who controls you', 'who operates you',
+                'who is the genius behind you', 'who is the mastermind behind you', 'who is the architect of you', 'who is the brain behind you',
+                'who is the brainchild of you', 'who is the brainwave behind you', 'who is the brainbox behind you', 'who is the brainiac behind you',
+                'who is the brainpower behind you', 'who is the braintrust behind you', 'who is the brainwork behind you', 'who is the brainwave behind you',
+                'who is the brainchild behind you', 'who is the brainbox behind you', 'who is the brainiac behind you', 'who is the brainpower behind you',
+                'who runs NovaYB', 'who manages NovaYB', 'who is the creator of NovaYB', 'who is the developer of NovaYB', 'who built NovaYB',
+                'who designed NovaYB', 'who programmed NovaYB', 'who is behind NovaYB', 'who is responsible for NovaYB', 'who set up NovaYB',
+                'who is the mind behind NovaYB', 'who is the founder of NovaYB', 'who is the architect of NovaYB', 'who is the brain behind NovaYB',
+                'who is the genius behind NovaYB', 'who is the mastermind behind NovaYB', 'who is the brainchild of NovaYB', 'who is the brainwave behind NovaYB',
+                'who is the brainbox behind NovaYB', 'who is the brainiac behind NovaYB', 'who is the brainpower behind NovaYB', 'who is the braintrust behind NovaYB',
+                'who developed NovaYB', 'who is the person behind NovaYB', 'who is the mind behind this bot', 'who is the developer of this AI',
+                'who is the creator of this assistant', 'who is the genius behind this chatbot', 'who is the mastermind behind this AI',
+                'who is the architect of this virtual assistant', 'who is the brain behind this bot', 'who is the founder of this AI',
+                'who is the developer of this virtual assistant', 'who is the creator of this chatbot', 'who is the person behind this AI',
+                'who is the mind behind this assistant', 'who is the genius behind this bot', 'who is the mastermind behind this assistant',
+                'who is the architect of this AI', 'who is the brain behind this assistant', 'who is the founder of this bot'
+            ];
+            const nameQuestions = [
+                'what is your name', 'who are you', 'tell me your name', 'what should i call you',
+                'ما اسمك', 'من أنت', 'ما هو اسمك', 'ما الذي يجب أن أسميك'
             ];
             const normalizedInput = input.toLowerCase();
-            return creatorQuestions.some(question => normalizedInput.includes(question));
+            if (creatorQuestions.some(question => normalizedInput.includes(question))) {
+                return 'creator';
+            } else if (nameQuestions.some(question => normalizedInput.includes(question))) {
+                return 'name';
+            }
+            return null;
         }
 
         async function sendMessage() {
@@ -180,9 +189,15 @@
             responseDiv.innerHTML += `<div class="loader"><div></div><div></div><div></div></div>`;
             responseDiv.scrollTop = responseDiv.scrollHeight;
 
-            if (checkForCreatorQuestion(input)) {
+            const questionType = checkForCreatorQuestion(input);
+            if (questionType === 'creator') {
                 document.querySelector('.loader').remove();
                 responseDiv.innerHTML += `<div class="message bot-message">Ammar Yasser, the 14-year-old developer made me.</div>`;
+                responseDiv.scrollTop = responseDiv.scrollHeight;
+                return;
+            } else if (questionType === 'name') {
+                document.querySelector('.loader').remove();
+                responseDiv.innerHTML += `<div class="message bot-message">I am NovaYB (نوفاوايبي), but you can call me Nova (نوفا).</div>`;
                 responseDiv.scrollTop = responseDiv.scrollHeight;
                 return;
             }
@@ -218,9 +233,10 @@
                 sendMessage();
             }
         }
-    </script>
+    </script>   
     <footer>
         &copy; Ammar Yasser 2025
     </footer>
 </body>
 </html>
+``` 
